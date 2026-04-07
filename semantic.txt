@@ -1,0 +1,85 @@
+PS C:\> cd "C:\huggingface_project"
+PS C:\huggingface_project> python semantic_search.py
+Traceback (most recent call last):
+  File "C:\huggingface_project\semantic_search.py", line 2, in <module>
+    import faiss
+ModuleNotFoundError: No module named 'faiss'
+PS C:\huggingface_project> pip install faiss-cpu
+Collecting faiss-cpu
+  Downloading faiss_cpu-1.13.2-cp313-cp313-win_amd64.whl.metadata (7.6 kB)
+Requirement already satisfied: numpy<3.0,>=1.25.0 in C:\Users\Admin\AppData\Local\Programs\Python\Python313\Lib\site-packages (from faiss-cpu) (2.4.2)
+Requirement already satisfied: packaging in C:\Users\Admin\AppData\Local\Programs\Python\Python313\Lib\site-packages (from faiss-cpu) (26.0)
+Downloading faiss_cpu-1.13.2-cp313-cp313-win_amd64.whl (18.9 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 18.9/18.9 MB 3.2 MB/s  0:00:06
+Installing collected packages: faiss-cpu
+Successfully installed faiss-cpu-1.13.2
+PS C:\huggingface_project> python semantic_search.py
+Loading model...
+
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights: 100%|██████████████████████████████████| 103/103 [00:00<00:00, 842.72it/s, Materializing param=pooler.dense.weight]
+BertModel LOAD REPORT from: sentence-transformers/all-MiniLM-L6-v2
+Key                     | Status     |  |
+------------------------+------------+--+-
+embeddings.position_ids | UNEXPECTED |  |
+
+Notes:
+- UNEXPECTED    :can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+System Ready!
+
+Enter your search query: I like fruits
+
+Top Results:
+
+Text: Apple is a fruit
+Category: fruit
+-----
+Text: Mango is sweet fruit
+Category: fruit
+-----
+Text: Car is a vehicle
+Category: vehicle
+-----
+
+Do you want to filter by category? (yes/no): yes
+Enter category (fruit/vehicle/tech): fruit
+
+Filtered Results:
+
+Text: Apple is a fruit
+Text: Mango is sweet fruit
+PS C:\huggingface_project> python semantic_search.py
+Loading model...
+
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights: 100%|██████████████████████████████████| 103/103 [00:00<00:00, 812.85it/s, Materializing param=pooler.dense.weight]
+BertModel LOAD REPORT from: sentence-transformers/all-MiniLM-L6-v2
+Key                     | Status     |  |
+------------------------+------------+--+-
+embeddings.position_ids | UNEXPECTED |  |
+
+Notes:
+- UNEXPECTED    :can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+System Ready!
+
+Enter your search query: machine learning
+
+Top Results:
+
+Text: Machine learning is AI
+Category: tech
+-----
+Text: Mango is sweet fruit
+Category: fruit
+-----
+Text: Apple is a fruit
+Category: fruit
+-----
+
+Do you want to filter by category? (yes/no): yes
+Enter category (fruit/vehicle/tech): tech
+
+Filtered Results:
+
+Text: Machine learning is AI
+PS C:\huggingface_project> 
