@@ -1,0 +1,55 @@
+PS C:\huggingface_project> python dataset_vector_search.py
+Loading dataset...
+
+Loading model...
+
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights: 100%|███████████████████| 103/103 [00:00<00:00, 886.88it/s, Materializing param=pooler.dense.weight]
+BertModel LOAD REPORT from: sentence-transformers/all-MiniLM-L6-v2
+Key                     | Status     |  |
+------------------------+------------+--+-
+embeddings.position_ids | UNEXPECTED |  |
+
+Notes:
+- UNEXPECTED    :can be ignored when loading from different task/architecture; not ok if you expect identical arch.   
+System Ready!
+
+Enter your search query: google introduces ai
+
+Top Results:
+
+Rank 1
+Text: Google auction begins on Friday An auction of shares in Google, the web search engine which could be floated for as much as \$36bn, takes place on Fri
+Category: Business
+Similarity Score: 0.451
+-----
+Rank 2
+Text: Google IPO Auction Off to Rocky Start  WASHINGTON/NEW YORK (Reuters) - The auction for Google  Inc.'s highly anticipated initial public offering got o
+Category: Business
+Similarity Score: 0.45
+-----
+Rank 3
+Text: Google IPO faces Playboy slip-up The bidding gets underway for Google's public offering, despite last-minute worries over an interview with its bosses
+Category: Business
+Similarity Score: 0.443
+-----
+Rank 4
+Text: Play Boys: Google IPO a Go Anyway Even though Google's two founders gave an interview to Playboy magazine in the midst of its IPO filing, the SEC allo
+Category: Business
+Similarity Score: 0.439
+-----
+Rank 5
+Text: New NASA Supercomputer to Aid Theorists and Shuttle Engineers (SPACE.com) SPACE.com - NASA researchers have teamed up with a pair of Silicon Valley fi
+Category: Sci/Tech
+Similarity Score: 0.433
+-----
+
+Do you want to filter by category? (yes/no): yes
+Enter category (World/Sports/Business/Sci/Tech): tech
+
+Filtered Results:
+
+Text: New NASA Supercomputer to Aid Theorists and Shuttle Engineers (SPACE.com) SPACE.com - NASA researchers have teamed up with a pair of Silicon Valley fi
+Category: Sci/Tech
+-----
+PS C:\huggingface_project> 
